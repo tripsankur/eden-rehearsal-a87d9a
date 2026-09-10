@@ -1,0 +1,146 @@
+<title>EDEN Rehearsal Notes</title>
+<meta name="theme-color" content="#07191F">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --ground:#F3F6F6; --surface:#FFFFFF; --ink:#10262B; --muted:#5B6E72; --line:#D6DFE0;
+  --accent:#0E8F8B; --accent-ink:#FFFFFF; --lead:#0B1E23;
+  --click-bg:#FFF1DA; --click-ink:#8A4B00; --beat-bg:#E4ECFF; --beat-ink:#2B4FA8;
+  --hand-bg:#DFF4E8; --hand-ink:#1A6B45; --opt-bg:#EEF2F2; --opt-ink:#5B6E72;
+  --shadow:0 -8px 24px rgba(16,38,43,.08);
+  --display:"Manrope","Segoe UI",system-ui,sans-serif;
+  --body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+  --fs:1.125rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#07191F; --surface:#0E2830; --ink:#EEF4F4; --muted:#9DB0B4; --line:#1E3A42;
+    --accent:#16B6B1; --accent-ink:#07191F; --lead:#FFFFFF;
+    --click-bg:#3A2A0C; --click-ink:#F5B858; --beat-bg:#152B52; --beat-ink:#9DBBFF;
+    --hand-bg:#0F3A28; --hand-ink:#66D9A0; --opt-bg:#14262C; --opt-ink:#8FA3A7;
+    --shadow:0 -8px 24px rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#07191F; --surface:#0E2830; --ink:#EEF4F4; --muted:#9DB0B4; --line:#1E3A42;
+  --accent:#16B6B1; --accent-ink:#07191F; --lead:#FFFFFF;
+  --click-bg:#3A2A0C; --click-ink:#F5B858; --beat-bg:#152B52; --beat-ink:#9DBBFF;
+  --hand-bg:#0F3A28; --hand-ink:#66D9A0; --opt-bg:#14262C; --opt-ink:#8FA3A7;
+  --shadow:0 -8px 24px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:var(--fs);line-height:1.55;min-height:100dvh;display:flex;flex-direction:column}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:var(--ground);border-bottom:1px solid var(--line);padding:.75rem 1rem .6rem;display:grid;gap:.15rem}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:flex;justify-content:space-between;gap:1rem;font-variant-numeric:tabular-nums}
+.top h1{font-family:var(--display);font-weight:800;font-size:1.25rem;line-height:1.2;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.35rem}
+.chip{font-family:var(--mono);font-size:.74rem;padding:.2rem .55rem;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-variant-numeric:tabular-nums;background:var(--surface)}
+.chip strong{color:var(--ink);font-weight:500}
+main{flex:1;padding:1rem 1rem 6.5rem;max-width:42rem;width:100%;margin:0 auto}
+.notes p{margin:0 0 1.05em}
+.notes strong{font-weight:700;color:var(--lead)}
+.cue{display:inline-block;font-family:var(--mono);font-size:.7em;letter-spacing:.06em;padding:.12em .5em;border-radius:.35em;vertical-align:.12em;margin:0 .2em;white-space:nowrap;font-weight:500}
+.cue-click{background:var(--click-bg);color:var(--click-ink)}
+.cue-pause,.cue-slow{background:var(--beat-bg);color:var(--beat-ink)}
+.cue-handover{background:var(--hand-bg);color:var(--hand-ink)}
+.cue-optional,.cue-add{background:var(--opt-bg);color:var(--opt-ink);font-style:italic;white-space:normal;letter-spacing:0;text-transform:none}
+body.drill .notes .plain{display:none}
+body.drill .notes p{margin:0 0 .8em;padding-left:1rem;border-left:3px solid var(--line)}
+.hint{font-size:.85rem;color:var(--muted);margin:0 0 1rem;display:none}
+body.drill .hint{display:block}
+.bottom{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--surface);border-top:1px solid var(--line);box-shadow:var(--shadow);padding:.5rem max(.75rem,env(safe-area-inset-left)) max(.6rem,env(safe-area-inset-bottom)) max(.75rem,env(safe-area-inset-right))}
+.row{display:grid;grid-template-columns:3.25rem 1fr 3.25rem;gap:.5rem;align-items:center;max-width:42rem;margin:0 auto}
+.nav{height:3rem;border-radius:.6rem;background:var(--accent);color:var(--accent-ink);font-family:var(--display);font-weight:800;font-size:1.25rem;display:grid;place-items:center}
+.nav[disabled]{opacity:.35;cursor:default}
+.center{display:flex;gap:.4rem;justify-content:center;align-items:center}
+.tool{height:2.6rem;padding:0 .8rem;border-radius:.6rem;border:1px solid var(--line);font-family:var(--mono);font-size:.76rem;letter-spacing:.04em;display:flex;align-items:center;gap:.4rem;color:var(--ink)}
+.tool[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.dots{display:flex;gap:.3rem;justify-content:center;margin-top:.5rem}
+.dots b{width:.5rem;height:.5rem;border-radius:50%;background:var(--line);display:block}
+.dots b.on{background:var(--accent);width:1.1rem;border-radius:.3rem}
+.sheet{position:fixed;inset:0;background:rgba(7,25,31,.55);z-index:9;display:none;align-items:flex-end}
+.sheet.open{display:flex}
+.panel{background:var(--surface);width:100%;max-height:82dvh;overflow:auto;border-radius:1rem 1rem 0 0;padding:.75rem .75rem calc(.75rem + env(safe-area-inset-bottom))}
+.panel h2{font-family:var(--display);font-size:1rem;margin:.25rem .5rem .75rem;color:var(--muted);font-weight:600}
+.item{display:grid;grid-template-columns:2rem 1fr auto;gap:.75rem;align-items:baseline;width:100%;text-align:left;padding:.7rem .5rem;border-radius:.5rem;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item.on{background:var(--ground)}
+.item .n{font-family:var(--mono);color:var(--accent);font-size:.8rem}
+.item .t{font-family:var(--display);font-weight:600;font-size:.98rem;line-height:1.3}
+.item .k{font-size:.78rem;color:var(--muted);display:block;font-family:var(--body)}
+.item .b{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){.notes{animation:in .18s ease-out}}
+@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (min-width:48rem){.top,.bottom .row{max-width:42rem;margin-inline:auto}.top{padding-inline:0}}
+</style>
+
+<header class="top">
+  <div class="eyebrow"><span id="eb-left">Slide 1 of 10</span><span id="eb-right">Total 14:05</span></div>
+  <h1 id="title">EDEN on Databricks Apps</h1>
+  <div class="meta" id="meta"></div>
+</header>
+
+<main>
+  <p class="hint">Cues only. Say the rest of each paragraph from memory, then switch back to check.</p>
+  <div class="notes" id="notes"></div>
+</main>
+
+<nav class="bottom" aria-label="Slide navigation">
+  <div class="row">
+    <button class="nav" id="prev" aria-label="Previous slide">‹</button>
+    <div class="center">
+      <button class="tool" id="index" aria-haspopup="dialog">Slides</button>
+      <button class="tool" id="drill" aria-pressed="false">Cues only</button>
+      <button class="tool" id="size" aria-label="Text size">Aa</button>
+    </div>
+    <button class="nav" id="next" aria-label="Next slide">›</button>
+  </div>
+  <div class="dots" id="dots"></div>
+</nav>
+
+<div class="sheet" id="sheet" role="dialog" aria-label="All slides">
+  <div class="panel" id="panel"><h2>All slides · total 14:05</h2></div>
+</div>
+
+<script>
+const DATA = [{"n": 1, "kicker": "Title", "title": "EDEN on Databricks Apps", "budget": "1:00", "clicks": 0, "paras": [[{"t": "Hi everyone, I'm Ankur.", "b": true}, {"t": " I'm a Technical Product Manager at Optus, where I help enable and build new capabilities across our data platforms.", "b": false}], [{"t": "Today I'm here to talk about EDEN", "b": true}, {"t": " — a Databricks App built on Azure Databricks.", "b": false}], [{"t": "What's interesting is that EDEN didn't start", "b": true}, {"t": " as a big programme with a long roadmap. It started with a conversation with our Databricks colleagues and a small idea we could test.", "b": false}], [{"t": "This is not only a story", "b": true}, {"t": " about creating a friendly search screen. It is about making authorised data access easier while retaining the identity, governance, and delivery discipline already established on the platform.", "b": false}], [{"t": "I'll focus on what the user experiences,", "b": true}, {"t": " what the platform provides behind that experience, and how EDEN became a repeatable capability rather than a one-off demonstration.", "b": false}]]}, {"n": 2, "kicker": "01 · Why", "title": "We built the vault.", "budget": "1:50", "clicks": 4, "paras": [[{"t": "Let's talk about the platform first.", "b": true}, {"t": " ", "b": false}, {"cue": "click", "t": "CLICK 1"}], [{"t": "We set out to build something that mattered:", "b": true}, {"t": " a strategic platform on Azure Databricks to retain and archive data from systems approaching end of life and end of support — and we did. We now have one central place for archive data, with more than 10 terabytes of structured and unstructured data archived from those systems. ", "b": false}, {"cue": "click", "t": "CLICK 2"}], [{"t": "That is important, but retaining and governing the data", "b": true}, {"t": " was only phase one. As the migration progressed, we recognised that we also needed to make the data usable for the people who relied on it.", "b": false}], [{"t": "That included a regulatory operations team", "b": true}, {"t": " working to real deadlines. They knew the old systems and the questions they needed answered, but they did not write SQL or spend their days inside Databricks. They needed a simple way to find the authorised information they were looking for, without becoming data engineers. ", "b": false}, {"cue": "click", "t": "CLICK 3"}], [{"t": "Think of phase one as the vault:", "b": true}, {"t": " governed and secured. A vault is only useful if the right people can get in.", "b": false}], [{"t": "Towards the end of 2024,", "b": true}, {"t": " I remember a conversation with our Databricks colleague about Databricks Apps; it was still in preview at the time. That conversation introduced us to the idea of building the user experience directly on Databricks, within the governance we had already established. ", "b": false}, {"cue": "click", "t": "CLICK 4"}], [{"t": "So the opportunity was not just to archive data.", "b": true}, {"t": " It was to make governed access practical for the people who needed it.", "b": false}]]}, {"n": 3, "kicker": "02 · Idea", "title": "A focused prototype proved the model.", "budget": "1:55", "clicks": 5, "paras": [[{"t": "We've talked about where the idea came from;", "b": true}, {"t": " now let's look at what we set out to build.", "b": false}], [{"t": "The idea was simple:", "b": true}, {"t": " bring the searches people needed into one place. Instead of sending users through multiple channels, we wanted a single, purpose-built interface that could support different business use cases, improve efficiency, and provide more consistent access to the right information. ", "b": false}, {"cue": "click", "t": "CLICK 1"}], [{"t": "So, we built a small, focused prototype.", "b": true}, {"t": " It was rough and limited, but it was enough to show the business what a simpler path could look like. The prototype was deliberately built on the existing platform — no separate data copy, no shortcut around governance. ", "b": false}, {"cue": "click", "t": "CLICK 2"}], [{"t": "This allowed us to test two things at the same time:", "b": true}, {"t": " whether the user journey was simple enough for the business, and whether the platform could support it without bypassing the controls around the data. ", "b": false}, {"cue": "click", "t": "CLICK 3"}], [{"t": "We then presented the concept at our Innovation Day", "b": true}, {"t": " — an internal forum where we bring forward new ideas and explore how they could become practical innovations on our platforms. It gave us the opportunity to share the vision, gather feedback, and demonstrate how a focused idea could address a real business need. ", "b": false}, {"cue": "click", "t": "CLICK 4"}], [{"t": "Once the business saw the direction,", "b": true}, {"t": " we had a basis for developing a consistent experience that could grow with new search types and new business questions. ", "b": false}, {"cue": "click", "t": "CLICK 5"}], [{"t": "We called it EDEN:", "b": true}, {"t": " Enterprise Data Explorer and Navigator. After all that talk of a vault, the name felt right: ", "b": false}, {"cue": "pause", "t": "PAUSE"}, {"t": " a garden of data people could finally walk into.", "b": false}]]}, {"n": 4, "kicker": "03 · What", "title": "The Application, EDEN", "budget": "2:25", "clicks": 12, "paras": [[{"t": "EDEN, the Databricks App,", "b": true}, {"t": " provides a simple user interface for business teams to explore and retrieve information through guided search screens. ", "b": false}, {"cue": "click", "t": "CLICK 1"}], [{"t": "Those searches can be configured for different use cases:", "b": true}, {"t": " ", "b": false}, {"cue": "click", "t": "CLICK 2"}], [{"t": "SQL searches", "b": true}, {"t": " run parameterised SQL based on the user's input. ", "b": false}, {"cue": "click", "t": "CLICK 3"}, {"t": " ", "b": false}, {"t": "File-based searches", "b": true}, {"t": " identify and retrieve relevant files based on the user's search criteria. ", "b": false}, {"cue": "click", "t": "CLICK 4"}, {"t": " ", "b": false}, {"t": "Multi-SQL searches", "b": true}, {"t": " use the results of one query to drive subsequent queries. ", "b": false}, {"cue": "click", "t": "CLICK 5"}, {"t": " ", "b": false}, {"t": "API-based searches", "b": true}, {"t": " retrieve data from external APIs, store it on the platform, and present it to the user. ", "b": false}, {"cue": "click", "t": "CLICK 6"}, {"t": " ", "b": false}, {"t": "Semi-structured data searches", "b": true}, {"t": " search XML data and present the results in a web-friendly format. ", "b": false}, {"cue": "click", "t": "CLICK 7"}], [{"t": "Here's the part I'm proudest of.", "b": true}, {"t": " ", "b": false}, {"cue": "slow", "t": "SLOW"}, {"t": " Every search screen is built from configuration, not code. Define the search type, configure the data retrieval logic, and the screen follows a consistent pattern. That consistency helps both sides. The business user does not need to learn a different application for every question, and the delivery team does not rebuild the same interaction pattern repeatedly. ", "b": false}, {"cue": "click", "t": "CLICK 8"}], [{"t": "Authentication and identity are part of the platform foundation.", "b": true}, {"t": " ", "b": false}, {"cue": "click", "t": "CLICK 9"}, {"t": " Users access EDEN through the established platform identity, so there is no separate login for the search experience. When a search runs, the user's identity and the applicable access controls remain part of the request. ", "b": false}, {"cue": "click", "t": "CLICK 10"}, {"t": " This is enabled through Databricks' on-behalf-of functionality. I'll stay at the principle level here; Beyza will explain this capability in more detail in the next part of the presentation. ", "b": false}, {"cue": "click", "t": "CLICK 11"}], [{"cue": "click", "t": "CLICK 12"}, {"t": " ", "b": false}, {"t": "EDEN also adds a configuration-driven layer of control", "b": true}, {"t": " by showing users only the searches they are authorised and configured to access. This reduces unnecessary clutter for the user while keeping the experience aligned with the existing governance capabilities in Databricks.", "b": false}], [{"t": "Governance is therefore built into the journey", "b": true}, {"t": " rather than added afterwards.", "b": false}], [{"t": "A prototype is one thing.", "b": true}, {"t": " Something a regulated business trusts every day is another. The rest of the story is how we made that trust practical.", "b": false}]]}, {"n": 5, "kicker": "03 · What · 1/3", "title": "Open the governed experience.", "budget": "0:50", "clicks": 3, "paras": [[{"t": "Let's follow the user journey.", "b": true}, {"t": " ", "b": false}, {"cue": "click", "t": "CLICK 1"}, {"t": " The person with the deadline now opens EDEN and starts from one place.", "b": false}], [{"t": "They do not need to work out which channel to use", "b": true}, {"t": " or find the right person to contact. ", "b": false}, {"cue": "click", "t": "CLICK 2"}, {"t": " The search categories sit on the left. ", "b": false}, {"cue": "click", "t": "CLICK 3"}, {"t": " They choose Browse Searches and begin with the question they need to answer.", "b": false}], [{"t": "From the user's perspective, this feels simple.", "b": true}, {"t": " But the platform foundation is still present: same identity model, no separate application login.", "b": false}], [{"t": "The catalogue can grow,", "b": true}, {"t": " but the starting point stays consistent. New governed searches can be added without making the user learn a new route each time. One application. One clear starting point.", "b": false}]]}, {"n": 6, "kicker": "03 · What · 2/3", "title": "Choose a search, not a ticket.", "budget": "0:55", "clicks": 1, "paras": [[{"cue": "click", "t": "CLICK 1"}, {"t": " ", "b": false}, {"t": "Next, the user chooses the governed search", "b": true}, {"t": " that matches their business question and provides the required inputs.", "b": false}], [{"t": "They are also not choosing", "b": true}, {"t": " between an easy experience and a governed experience. Their identity and access controls travel with them while they provide the inputs.", "b": false}], [{"t": "The path is guided,", "b": true}, {"t": " and the user stays focused on the question they need answered.", "b": false}], [{"t": "This is where configuration changes the operating model.", "b": true}, {"t": " A business analyst who understands the question and the data can help define a new search, while the platform team maintains the reusable controls and delivery path. That does not remove governance; it moves the right kind of work closer to the people who understand the business need.", "b": false}]]}, {"n": 7, "kicker": "03 · What · 3/3", "title": "Run the search. Preview the governed result.", "budget": "1:05", "clicks": 2, "paras": [[{"cue": "click", "t": "CLICK 1"}, {"t": " ", "b": false}, {"t": "The user runs the search,", "b": true}, {"t": " ", "b": false}, {"cue": "click", "t": "CLICK 2"}, {"t": " and the result is presented according to the access controls that apply to them.", "b": false}], [{"t": "In this example,", "b": true}, {"t": " the configured search extracts information from a semi-structured data source and presents the result in a web format designed for the business use case. The result is therefore not just a formatted answer. It is an authorised result produced through the governed search path. EDEN does not create a separate access route simply because the user is interacting through a friendly interface.", "b": false}], [{"t": "This is the shift from question to authorised action.", "b": true}, {"t": " The preview gives the user confidence that they are looking at the information relevant to their question before taking the next permitted action, such as export where available.", "b": false}], [{"t": "A user sees a simple answer.", "b": true}, {"t": " Behind that answer are identity, access, configured logic, and a controlled delivery path working together.", "b": false}]]}, {"n": 8, "kicker": "04 · How", "title": "Prototype to production in three months", "budget": "2:00", "clicks": 5, "paras": [[{"t": "Now that we've seen the user experience,", "b": true}, {"t": " let's look at the operating model behind it: how we move changes safely, understand what is live, and keep EDEN dependable as usage grows. ", "b": false}, {"cue": "click", "t": "CLICK 1"}], [{"t": "Moving from prototype to production", "b": true}, {"t": " took real engineering discipline, and I won't pretend it was effortless. ", "b": false}, {"cue": "optional", "t": "OPTIONAL: one concrete example, 15 seconds"}], [{"t": "We built automated pipelines", "b": true}, {"t": " so changes could move through a clean, traceable delivery path. That gives us a consistent way to promote updates, understand what changed, and know which version is running. ", "b": false}, {"cue": "click", "t": "CLICK 2"}], [{"t": "Our first production release", "b": true}, {"t": " was delivered within three months of Databricks Apps becoming generally available. ", "b": false}, {"cue": "click", "t": "CLICK 3"}, {"t": " Since then, we have delivered close to ten releases. The significance is that EDEN has evolved through controlled, versioned releases rather than ad-hoc changes. Each release provides a known state of the application and its supporting configuration, helping us manage change with confidence. ", "b": false}, {"cue": "click", "t": "CLICK 4"}], [{"t": "We also treat observability as part of the product,", "b": true}, {"t": " not a separate concern. As the number of screens grows, we need visibility of application health, search behaviour, and whether changes are operating as expected. This is how we move from simply deploying an app to responsibly running a capability. ", "b": false}, {"cue": "click", "t": "CLICK 5"}], [{"t": "The second part of the operating model is scale.", "b": true}, {"t": " Because new searches are configuration-driven, adding a business use case does not require a new application build each time.", "b": false}], [{"t": "That is what allowed us", "b": true}, {"t": " to move beyond one prototype. The value is not only speed; it is repeatability — a consistent way to introduce, release, and operate new search experiences. That is what makes EDEN a platform capability rather than a single application.", "b": false}]]}, {"n": 9, "kicker": "05 · Benefit", "title": "A governed experience people choose to use.", "budget": "1:50", "clicks": 6, "paras": [[{"t": "The real test is not how quickly you can build an app.", "b": true}, {"t": " It is whether people choose to use it. Let's summarise the benefits EDEN delivers. ", "b": false}, {"cue": "click", "t": "CLICK 1"}], [{"t": "First,", "b": true}, {"t": " it gives non-technical users faster access to authorised information. They can start with a business question and use a guided search, without writing SQL. ", "b": false}, {"cue": "click", "t": "CLICK 2"}], [{"t": "Second,", "b": true}, {"t": " it reduces dependency on engineering for repeatable requests. Analysts and business teams can work with configured search experiences, while engineering remains focused on the platform capabilities, controls, and more complex changes. ", "b": false}, {"cue": "click", "t": "CLICK 3"}], [{"t": "Third,", "b": true}, {"t": " it improves consistency. Users follow a familiar experience, while searches are delivered through reusable patterns rather than separate one-off solutions. ", "b": false}, {"cue": "click", "t": "CLICK 4"}], [{"t": "Finally,", "b": true}, {"t": " it makes self-service practical without weakening governance. Users see only the information and searches they are authorised to access. ", "b": false}, {"cue": "click", "t": "CLICK 5"}], [{"t": "The numbers show that this is solving a real problem:", "b": true}, {"t": " more than a hundred screens are now built around business questions, and more than fifty people are actively using them. ", "b": false}, {"cue": "click", "t": "CLICK 6"}], [{"t": "EDEN has shown what Databricks Apps can do", "b": true}, {"t": " as a governed capability, and the opportunity now extends beyond one app. With more than six apps in build, more than eight feature requests, and conversational analytics being explored for unstructured data, the next step is to make governed app building repeatable across teams.", "b": false}], [{"t": "AI-assisted coding helped us", "b": true}, {"t": " move quickly from a clear problem to a working prototype while keeping the guardrails in view. Databricks App Builder can help take that approach further.", "b": false}]]}, {"n": 10, "kicker": "Close", "title": "Handover to Beyza", "budget": "0:15", "clicks": 0, "paras": [[{"t": "I've focused on the outcome and the principles.", "b": true}, {"t": " I will hand over to Beyza, who will now show the practical App Builder experience and how it can accelerate the next wave of apps. ", "b": false}, {"cue": "handover", "t": "HANDOVER → Beyza"}]]}];
+let cur = 0, size = 1;
+const SIZES = ["1rem","1.125rem","1.3rem"];
+try { cur = Math.min(DATA.length-1, Math.max(0, parseInt(localStorage.getItem("eden-slide")||"0",10)||0));
+      size = parseInt(localStorage.getItem("eden-size")||"1",10);
+      if (localStorage.getItem("eden-drill")==="1") document.body.classList.add("drill"); } catch(e){}
+const $ = id => document.getElementById(id);
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
+function render(){
+  const s = DATA[cur];
+  $("eb-left").textContent = `Slide ${s.n} of ${DATA.length} · ${s.kicker}`;
+  $("title").textContent = s.title;
+  $("meta").innerHTML = `<span class="chip"><strong>${s.budget||"—"}</strong> min</span><span class="chip"><strong>${s.clicks}</strong> ${s.clicks===1?"click":"clicks"}</span>`;
+  $("notes").innerHTML = s.paras.map(p => "<p>" + p.map(r => {
+    if (r.cue) return `<span class="cue cue-${r.cue}">${esc(r.t)}</span>`;
+    return r.b ? `<strong>${esc(r.t)}</strong>` : `<span class="plain">${esc(r.t)}</span>`;
+  }).join("") + "</p>").join("");
+  $("prev").disabled = cur===0; $("next").disabled = cur===DATA.length-1;
+  $("dots").innerHTML = DATA.map((_,i)=>`<b class="${i===cur?"on":""}"></b>`).join("");
+  document.documentElement.style.setProperty("--fs", SIZES[size]);
+  $("drill").setAttribute("aria-pressed", document.body.classList.contains("drill") ? "true" : "false");
+  window.scrollTo({top:0});
+  try { localStorage.setItem("eden-slide", String(cur)); localStorage.setItem("eden-size", String(size)); } catch(e){}
+}
+function go(i){ if(i<0||i>=DATA.length) return; cur=i; render(); }
+$("prev").onclick = ()=>go(cur-1); $("next").onclick = ()=>go(cur+1);
+$("drill").onclick = ()=>{ document.body.classList.toggle("drill"); try{localStorage.setItem("eden-drill", document.body.classList.contains("drill")?"1":"0");}catch(e){} render(); };
+$("size").onclick = ()=>{ size=(size+1)%SIZES.length; render(); };
+const panel = $("panel");
+DATA.forEach((s,i)=>{ const b=document.createElement("button"); b.className="item"; b.innerHTML=`<span class="n">${String(s.n).padStart(2,"0")}</span><span class="t">${esc(s.title)}<span class="k">${esc(s.kicker)}</span></span><span class="b">${s.budget||"—"} · ${s.clicks}c</span>`; b.onclick=()=>{ go(i); $("sheet").classList.remove("open"); }; panel.appendChild(b); });
+$("index").onclick = ()=>{ [...panel.querySelectorAll(".item")].forEach((el,i)=>el.classList.toggle("on",i===cur)); $("sheet").classList.add("open"); };
+$("sheet").addEventListener("click", e=>{ if(e.target===$("sheet")) $("sheet").classList.remove("open"); });
+document.addEventListener("keydown", e=>{ if(e.key==="ArrowRight") go(cur+1); if(e.key==="ArrowLeft") go(cur-1); if(e.key==="Escape") $("sheet").classList.remove("open"); });
+let tx=null; document.addEventListener("touchstart", e=>{ tx=e.touches[0].clientX; }, {passive:true});
+document.addEventListener("touchend", e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; tx=null; if(Math.abs(dx)>70){ dx<0?go(cur+1):go(cur-1); } }, {passive:true});
+render();
+</script>
