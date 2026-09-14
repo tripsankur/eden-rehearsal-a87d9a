@@ -15,12 +15,12 @@
     <item>
       <title>EDEN, full speaker notes</title>
       <itunes:title>EDEN, full speaker notes</itunes:title>
-      <itunes:episode>12</itunes:episode>
+      <itunes:episode>11</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-00-20260914</guid>
+      <guid isPermaLink="false">eden-notes-00-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 10:39:00 +0000</pubDate>
-      <itunes:duration>16:38</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/00-full-talk.mp3" length="8246601" type="audio/mpeg"/>
+      <itunes:duration>14:54</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/00-full-talk.mp3" length="7409097" type="audio/mpeg"/>
       <description>EDEN, full speaker notes. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
@@ -28,7 +28,7 @@
       <itunes:title>Slide 1: EDEN on Databricks Apps.</itunes:title>
       <itunes:episode>1</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-01-20260914</guid>
+      <guid isPermaLink="false">eden-notes-01-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:01:00 +0000</pubDate>
       <itunes:duration>0:54</itunes:duration>
       <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/01-title.mp3" length="691794" type="audio/mpeg"/>
@@ -39,10 +39,10 @@
       <itunes:title>Slide 2: Why. We built the vault.</itunes:title>
       <itunes:episode>2</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-02-20260914</guid>
+      <guid isPermaLink="false">eden-notes-02-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:02:00 +0000</pubDate>
-      <itunes:duration>2:02</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/02-why.mp3" length="1236114" type="audio/mpeg"/>
+      <itunes:duration>2:34</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/02-why.mp3" length="1492242" type="audio/mpeg"/>
       <description>Slide 2: Why. We built the vault.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
@@ -50,10 +50,10 @@
       <itunes:title>Slide 3: Idea. A focused prototype proved the model.</itunes:title>
       <itunes:episode>3</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-03-20260914</guid>
+      <guid isPermaLink="false">eden-notes-03-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:03:00 +0000</pubDate>
-      <itunes:duration>1:58</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/03-idea.mp3" length="1200037" type="audio/mpeg"/>
+      <itunes:duration>1:54</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/03-idea.mp3" length="1168357" type="audio/mpeg"/>
       <description>Slide 3: Idea. A focused prototype proved the model.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
@@ -61,87 +61,76 @@
       <itunes:title>Slide 4: What. The application, EDEN.</itunes:title>
       <itunes:episode>4</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-04-20260914</guid>
+      <guid isPermaLink="false">eden-notes-04-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:04:00 +0000</pubDate>
-      <itunes:duration>2:45</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/04-what.mp3" length="1577686" type="audio/mpeg"/>
+      <itunes:duration>2:24</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/04-what.mp3" length="1409110" type="audio/mpeg"/>
       <description>Slide 4: What. The application, EDEN.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
-      <title>Slide 5: Walkthrough, one of three. Open the governed experience.</title>
-      <itunes:title>Slide 5: Walkthrough, one of three. Open the governed experience.</itunes:title>
+      <title>Slide 5: Walkthrough, one of two. Open the governed experience and choose a search.</title>
+      <itunes:title>Slide 5: Walkthrough, one of two. Open the governed experience and choose a search.</itunes:title>
       <itunes:episode>5</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-05-20260914</guid>
+      <guid isPermaLink="false">eden-notes-05-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:05:00 +0000</pubDate>
-      <itunes:duration>1:14</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/05-open.mp3" length="851570" type="audio/mpeg"/>
-      <description>Slide 5: Walkthrough, one of three. Open the governed experience.. Narrated speaker notes for rehearsal.</description>
+      <itunes:duration>1:16</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/05-open.mp3" length="865988" type="audio/mpeg"/>
+      <description>Slide 5: Walkthrough, one of two. Open the governed experience and choose a search.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
-      <title>Slide 6: Walkthrough, two of three. Choose a search, not a ticket.</title>
-      <itunes:title>Slide 6: Walkthrough, two of three. Choose a search, not a ticket.</itunes:title>
+      <title>Slide 6: Walkthrough, two of two. Run the search. Preview the governed result.</title>
+      <itunes:title>Slide 6: Walkthrough, two of two. Run the search. Preview the governed result.</itunes:title>
       <itunes:episode>6</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-06-20260914</guid>
+      <guid isPermaLink="false">eden-notes-06-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:06:00 +0000</pubDate>
-      <itunes:duration>1:07</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/06-select.mp3" length="792627" type="audio/mpeg"/>
-      <description>Slide 6: Walkthrough, two of three. Choose a search, not a ticket.. Narrated speaker notes for rehearsal.</description>
+      <itunes:duration>1:12</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/06-run.mp3" length="838719" type="audio/mpeg"/>
+      <description>Slide 6: Walkthrough, two of two. Run the search. Preview the governed result.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
-      <title>Slide 7: Walkthrough, three of three. Run the search. Preview the governed result.</title>
-      <itunes:title>Slide 7: Walkthrough, three of three. Run the search. Preview the governed result.</itunes:title>
+      <title>Slide 7: How. Prototype to production in three months.</title>
+      <itunes:title>Slide 7: How. Prototype to production in three months.</itunes:title>
       <itunes:episode>7</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-07-20260914</guid>
+      <guid isPermaLink="false">eden-notes-07-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:07:00 +0000</pubDate>
-      <itunes:duration>1:13</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/07-run.mp3" length="840259" type="audio/mpeg"/>
-      <description>Slide 7: Walkthrough, three of three. Run the search. Preview the governed result.. Narrated speaker notes for rehearsal.</description>
+      <itunes:duration>2:13</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/07-how.mp3" length="1324263" type="audio/mpeg"/>
+      <description>Slide 7: How. Prototype to production in three months.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
-      <title>Slide 8: How. Prototype to production in three months.</title>
-      <itunes:title>Slide 8: How. Prototype to production in three months.</itunes:title>
+      <title>Slide 8: Benefit. A governed experience people choose to use.</title>
+      <itunes:title>Slide 8: Benefit. A governed experience people choose to use.</itunes:title>
       <itunes:episode>8</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-08-20260914</guid>
+      <guid isPermaLink="false">eden-notes-08-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:08:00 +0000</pubDate>
-      <itunes:duration>2:13</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/08-how.mp3" length="1321959" type="audio/mpeg"/>
-      <description>Slide 8: How. Prototype to production in three months.. Narrated speaker notes for rehearsal.</description>
+      <itunes:duration>1:51</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/08-benefit.mp3" length="1150894" type="audio/mpeg"/>
+      <description>Slide 8: Benefit. A governed experience people choose to use.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
-      <title>Slide 9: Benefit. A governed experience people choose to use.</title>
-      <itunes:title>Slide 9: Benefit. A governed experience people choose to use.</itunes:title>
+      <title>Slide 9: Closing and handover.</title>
+      <itunes:title>Slide 9: Closing and handover.</itunes:title>
       <itunes:episode>9</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-09-20260914</guid>
+      <guid isPermaLink="false">eden-notes-09-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:09:00 +0000</pubDate>
-      <itunes:duration>2:04</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/09-benefit.mp3" length="1252078" type="audio/mpeg"/>
-      <description>Slide 9: Benefit. A governed experience people choose to use.. Narrated speaker notes for rehearsal.</description>
-    </item>
-    <item>
-      <title>Slide 10: Closing and handover.</title>
-      <itunes:title>Slide 10: Closing and handover.</itunes:title>
-      <itunes:episode>10</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-10-20260914</guid>
-      <pubDate>Mon, 14 Sep 2026 09:10:00 +0000</pubDate>
-      <itunes:duration>1:05</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/10-close.mp3" length="782033" type="audio/mpeg"/>
-      <description>Slide 10: Closing and handover.. Narrated speaker notes for rehearsal.</description>
+      <itunes:duration>0:32</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/09-close.mp3" length="512079" type="audio/mpeg"/>
+      <description>Slide 9: Closing and handover.. Narrated speaker notes for rehearsal.</description>
     </item>
     <item>
       <title>Cue drill: lead-ins only, fill the rest</title>
       <itunes:title>Cue drill: lead-ins only, fill the rest</itunes:title>
       <itunes:episode>11</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
-      <guid isPermaLink="false">eden-notes-11-20260914</guid>
+      <guid isPermaLink="false">eden-notes-11-20260914b</guid>
       <pubDate>Mon, 14 Sep 2026 09:11:00 +0000</pubDate>
-      <itunes:duration>7:47</itunes:duration>
-      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/11-cue-drill.mp3" length="3992665" type="audio/mpeg"/>
+      <itunes:duration>7:05</itunes:duration>
+      <enclosure url="https://tripsankur.github.io/eden-rehearsal-a87d9a/11-cue-drill.mp3" length="3661081" type="audio/mpeg"/>
       <description>Cue drill: lead-ins only, fill the rest. Narrated speaker notes for rehearsal.</description>
     </item>
   </channel>
